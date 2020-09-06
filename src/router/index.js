@@ -109,6 +109,19 @@ export const constantRoutes = [
     ]
   },
   {
+    path: '/stock',
+    component: Layout,
+    redirect: '/stock/index',
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/stock/index'),
+        name: 'Stock',
+        meta: { title: 'Stock', icon: 'stock', noCache: true }
+      }
+    ]
+  },
+  {
     path: '/profile',
     component: Layout,
     redirect: '/profile/index',
